@@ -14,7 +14,7 @@ import json
 
 @dataclass
 class Properties:
-    with open('properties.json') as f:
+    with open('../properties.json') as f:
         data = json.load(f)
 
 
@@ -97,7 +97,7 @@ def sample_run_report(property_id="323042075", query=Views, offset=0):
     positive.
 
     """
-    client = BetaAnalyticsDataClient.from_service_account_json(os.path.abspath('gaauth.json'))
+    client = BetaAnalyticsDataClient.from_service_account_json(os.path.abspath('../gaauth.json'))
 
     if query.filtersBool:
         request = RunReportRequest(

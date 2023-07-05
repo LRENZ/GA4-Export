@@ -22,7 +22,7 @@ def main(query, property_name):
 
     property_id = Properties.data[property_name]['property_id']
     dataset = Properties.data[property_name]['dataset']
-    bigquery_project = input('please input your bigquery project ID: ')
+    bigquery_project = 'river-data-387522'
 
     res = sample_run_report(query=query, property_id=property_id)
 
@@ -70,7 +70,7 @@ def main(query, property_name):
         column_names_specified = False
         print('no column names specified')
 
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.abspath('gcpauth.json')
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.abspath('../gcpauth.json')
 
     client = bigquery.Client()
 
